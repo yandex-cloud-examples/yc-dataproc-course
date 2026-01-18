@@ -25,6 +25,8 @@ module "datasphere-sa" {
     "dataproc.agent",
     "vpc.user",
     "storage.admin",
+    "dataproc.admin",
+    "iam.serviceAccounts.user",
   ]
 }
 
