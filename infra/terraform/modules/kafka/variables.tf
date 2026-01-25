@@ -39,7 +39,7 @@ variable "subnet_ids" {
 variable "kafka_version" {
   description = "The Kafka version to use."
   type        = string
-  default     = "3.5"
+  default     = "4.0"
 }
 
 variable "brokers_count" {
@@ -144,24 +144,6 @@ variable "kafka_config" {
     sasl_enabled_mechanisms         = optional(list(string))
   })
   default = {}
-}
-
-variable "zookeeper_config" {
-  description = "The configuration for ZooKeeper nodes."
-  type = object({
-    resources = object({
-      resource_preset_id = optional(string, "s3-c2-m8")
-      disk_type_id       = optional(string, "network-ssd")
-      disk_size          = optional(number, 32)
-    })
-  })
-  default = {
-    resources = {
-      resource_preset_id = "s3-c2-m8"
-      disk_type_id       = "network-ssd"
-      disk_size          = 30
-    }
-  }
 }
 
 variable "access_policy" {

@@ -51,13 +51,7 @@ resource "yandex_mdb_kafka_cluster" "this" {
         sasl_enabled_mechanisms         = var.kafka_config.sasl_enabled_mechanisms
       }
     }
-    zookeeper {
-      resources {
-        resource_preset_id = var.zookeeper_config.resources.resource_preset_id
-        disk_type_id       = var.zookeeper_config.resources.disk_type_id
-        disk_size          = var.zookeeper_config.resources.disk_size
-      }
-    }
+
     dynamic "access" {
       for_each = range(var.access_policy == null ? 0 : 1)
       content {
