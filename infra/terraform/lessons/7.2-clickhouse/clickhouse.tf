@@ -6,7 +6,7 @@ module "clickhouse" {
   resource_preset_id = "s3-c2-m8"
   disk_size          = 50
   disk_type_id       = "network-ssd"
-  database_version   = "24.8"
+  database_version   = "25.12"
 
   access_web_sql     = true
 

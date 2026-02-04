@@ -9,8 +9,8 @@ resource "yandex_iam_service_account_static_access_key" "tf-mgmt-sa-static-key" 
 
 resource "yandex_storage_object" "clickhouse-jdbc-jar" {
   bucket = var.s3_bucket_tasks
-  key    = "jars/clickhouse-jdbc-0.6.5.jar"
-  source = "${path.module}/../../../jars/clickhouse-jdbc-0.6.5.jar"
+  key    = "jars/clickhouse-jdbc-0.9.6-all.jar"
+  source = "${path.module}/../../../jars/clickhouse-jdbc-0.9.6-all.jar"
   access_key = yandex_iam_service_account_static_access_key.tf-mgmt-sa-static-key.access_key
   secret_key = yandex_iam_service_account_static_access_key.tf-mgmt-sa-static-key.secret_key
 }
